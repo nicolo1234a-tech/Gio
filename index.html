@@ -1,8 +1,13 @@
-<!DOCTYPE html><html lang="it">
+<!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <title>Per Lei</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{
       font-family:'Poppins',sans-serif;
@@ -70,6 +75,25 @@
       cursor:pointer;
     }
 
+    /* LINK A PAROLE */
+    .enter{
+      margin-top:3rem;
+    }
+
+    .enter a{
+      color:#ffd6e7;
+      text-decoration:none;
+      font-size:1rem;
+      border-bottom:1px solid rgba(255,214,231,.35);
+      padding-bottom:2px;
+      transition:.4s;
+    }
+
+    .enter a:hover{
+      border-bottom-color:#ffd6e7;
+      opacity:1;
+    }
+
     .cta{
       margin-top:3rem;
       display:inline-block;
@@ -87,11 +111,26 @@
       box-shadow:0 10px 30px rgba(0,0,0,.4);
     }
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-  </style></head>
-<body><div class="overlay"></div><!-- HOME --><section id="home">
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes beat{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.2)}
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(10px)}
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<!-- HOME -->
+<section id="home">
   <div class="content">
     <div class="heart">❤</div>
     <h1>Questo spazio esiste<br><span>per te</span></h1>
@@ -100,9 +139,18 @@
       È solo un modo semplice e sincero
       per dirti che sei importante.
     </p>
+
     <div class="scroll" onclick="document.getElementById('second').scrollIntoView({behavior:'smooth'})">↓</div>
+
+    <!-- NUOVO COLLEGAMENTO -->
+    <div class="enter">
+      <a href="parole.html">entra nelle parole</a>
+    </div>
   </div>
-</section><!-- SEZIONE 2 --><section id="second">
+</section>
+
+<!-- SEZIONE 2 -->
+<section id="second">
   <div class="content">
     <h2>Perché alcune persone restano</h2>
     <p>
@@ -113,15 +161,21 @@
     </p>
     <div class="scroll" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">↓</div>
   </div>
-</section><!-- SEZIONE FINALE --><section id="final">
+</section>
+
+<!-- SEZIONE FINALE -->
+<section id="final">
   <div class="content">
     <h2>Se sei arrivata fin qui</h2>
     <p>
       Forse è perché qualcosa ti ha fermata.
       E io spero solo che tu sappia questo:
       ogni parola qui è vera.
-    </p><a class="cta" href="per-te.html">Continua</a>
+    </p>
 
+    <a class="cta" href="per-te.html">Continua</a>
   </div>
-</section></body>
+</section>
+
+</body>
 </html>
