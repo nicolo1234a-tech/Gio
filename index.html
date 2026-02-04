@@ -1,33 +1,97 @@
-<!DOCTYPE html>
-<html lang="it">
+<!DOCTYPE html><html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Per te</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Per Lei</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1c2040, #0b0d17);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-  <div class="overlay"></div>
+    /* atmosfera */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%);
+      pointer-events: none;
+    }
 
-  <main class="hero">
-    <div class="heart">❤</div>
+    main {
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+      animation: fadeUp 2s ease forwards;
+    }
 
-    <h1>
-      Questo spazio esiste  
-      <span>per te</span>
-    </h1>
+    .heart {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #ff5fa2;
+      animation: beat 1.6s infinite;
+    }
 
-    <p>
-      Non è un sito perfetto.  
-      È solo un modo per dirti che sei importante.
-    </p>
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
 
-    <div class="scroll">↓</div>
-  </main>
+    h1 span {
+      background: linear-gradient(90deg, #ff5fa2, #9b8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-</body>
+    p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .hint {
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      opacity: 0.6;
+    }
+
+    /* animazioni */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style></head>
+<body>  <div class="overlay"></div>  <main>
+    <div class="heart">❤</div><h1>
+  Questo spazio esiste<br>
+  <span>per te</span>
+</h1>
+
+<p>
+  Non è un sito qualunque.
+  È solo un modo semplice e sincero
+  per dirti che sei importante.
+</p>
+
+<div class="hint">continua a scorrere, con calma</div>
+
+  </main></body>
 </html>
