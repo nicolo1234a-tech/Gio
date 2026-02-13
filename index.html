@@ -49,16 +49,27 @@ p{
   text-shadow:0 0 10px #ff99bb;
 }
 
-audio, iframe{
-  width:100%;
+/* LINK YOUTUBE */
+.yt-link{
+  display:inline-block;
   margin-top:1rem;
+  padding:15px 35px;
+  background:linear-gradient(45deg,#ff4d88,#ff99bb);
+  color:white;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:1.4rem;
+  box-shadow:0 0 25px #ff66aa;
+  transition:0.3s;
 }
 
-iframe{
-  height:215px;
-  border:none;
+.yt-link:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 40px #ffffff;
 }
 
+/* ZOOM */
 .zoom{
   animation:zoomBg 5s ease-in-out infinite alternate;
 }
@@ -105,13 +116,13 @@ iframe{
 <p id="typedText"></p>
 
 <h2>1️⃣ Sei Tu</h2>
-<audio controls autoplay src="sei-tu.mp3"></audio>
+<a class="yt-link" href="LINK-SEI-TU" target="_blank">▶ Ascolta Sei Tu 💖</a>
 
 <h2>2️⃣ Solo Noi</h2>
-<audio controls autoplay src="solo-noi.mp3"></audio>
+<a class="yt-link" href="https://youtu.be/F6Mg31-tt8M?si=EXEzdV255ngOObis" target="_blank">▶ Ascolta Solo Noi 💖</a>
 
 <h2>3️⃣ Finalmente Noi</h2>
-<iframe src="https://www.youtube.com/embed/Jvn-Z9o6mJ4?autoplay=1&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<a class="yt-link" href="https://youtu.be/Jvn-Z9o6mJ4" target="_blank">▶ Ascolta Finalmente Noi 💕</a>
 
 </div>
 
@@ -121,7 +132,6 @@ ti abbraccerei forte 🥰💓✨
 </div>
 
 <script>
-// FRASI FLIRTY E ROMANTICHE
 const text = "Non è solo attrazione…\n\nOgni tuo sguardo mi fa sorridere 🥰💓\nSe fossi qui… ti abbraccerei forte 😌💖\nOgni tuo gesto mi fa battere il cuore 💓✨\nVicino a te, il mondo scompare… io e te 😍💖\nMi fai desiderare più di quanto le parole possano dire 💓💖";
 
 let i = 0;
@@ -136,7 +146,6 @@ function typeWriter(){
 }
 typeWriter();
 
-// PICCOLI CUORICINI CHE VOLANO
 function createHeart(){
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -149,7 +158,6 @@ function createHeart(){
 }
 
 setInterval(createHeart, 400);
-
 </script>
 
 </body>
