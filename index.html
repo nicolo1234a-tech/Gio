@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solo Tu 🥵💦</title>
+<title>Solo Tu 🥰💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   font-family:'Poppins',sans-serif;
-  background:radial-gradient(circle at top,#ff4da6,#1a0010 70%);
+  background:radial-gradient(circle at top,#ffb3c6,#ff66a3 70%);
   color:white;
   min-height:100vh;
   display:flex;
@@ -24,17 +24,20 @@ body{
 .container{
   max-width:900px;
   padding:3rem;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(30px);
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(25px);
   border-radius:35px;
   animation:fade 2s ease forwards;
-  box-shadow:0 0 70px rgba(255,0,102,0.7);
+  box-shadow:0 0 50px rgba(255,102,170,0.6);
+  position:relative;
+  z-index:1;
 }
 
 h1{
   font-family:'Playfair Display',serif;
   font-size:3rem;
-  animation:glow 2s infinite alternate, pulse 1s infinite;
+  animation:pulse 1.5s infinite;
+  text-shadow:0 0 15px #ff66aa;
 }
 
 h2{margin-top:2rem;}
@@ -43,7 +46,7 @@ p{
   margin:1.2rem 0;
   line-height:2;
   font-size:1.2rem;
-  text-shadow:0 0 10px #ff1f75;
+  text-shadow:0 0 10px #ff99bb;
 }
 
 audio, iframe{
@@ -60,15 +63,17 @@ iframe{
   animation:zoomBg 5s ease-in-out infinite alternate;
 }
 
+/* CUORICINI */
+.heart{
+  position:fixed;
+  font-size:20px;
+  opacity:0;
+  animation:heartFloat 4s linear infinite;
+}
+
 @keyframes fade{
   from{opacity:0;transform:translateY(40px);}
   to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes glow{
-  0%{text-shadow:0 0 10px #fff;}
-  50%{text-shadow:0 0 60px #ff1f75, 0 0 90px #ff66aa;}
-  100%{text-shadow:0 0 30px #ff1f75,0 0 60px #ff3399;}
 }
 
 @keyframes pulse{
@@ -79,8 +84,15 @@ iframe{
 
 @keyframes zoomBg{
   0%{transform:scale(1);}
-  50%{transform:scale(1.04);}
+  50%{transform:scale(1.03);}
   100%{transform:scale(1);}
+}
+
+@keyframes heartFloat{
+  0%{transform:translateY(0) scale(0.8);opacity:0;}
+  10%{opacity:1;}
+  50%{transform:translateY(-150px) scale(1.2);}
+  100%{transform:translateY(-300px) scale(0.8);opacity:0;}
 }
 </style>
 </head>
@@ -88,7 +100,7 @@ iframe{
 
 <div class="container">
 
-<h1>Non è solo San Valentino 🥵💦</h1>
+<h1>Non è solo San Valentino 🥰💖</h1>
 
 <p id="typedText"></p>
 
@@ -103,26 +115,41 @@ iframe{
 
 </div>
 
-<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.7rem; opacity:0; transition:2s; text-shadow:0 0 20px #ff66aa;">
+<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.7rem; opacity:0; transition:2s; text-shadow:0 0 20px #ff99bb;">
 Se fossi qui adesso…  
-non mi limiterei a guardarti 😌🔥💦🥵
+ti abbraccerei forte 🥰💓✨
 </div>
 
 <script>
-// FRASI FLIRTY E PROVOCANTI 🥵💦
-const text = "Non è solo attrazione…\n\nOgni tuo sguardo mi fa vibrare 🥵💓💦\nSe fossi qui… non mi limiterei a guardarti 😌🔥💦\nOgni tuo gesto mi fa perdere il respiro 🥵💖💦\nVicino a te, il mondo scompare… io e te 😏💦🫦\nMi fai desiderare più di quanto le parole possano dire 💓💦🥵";
+// FRASI FLIRTY E ROMANTICHE
+const text = "Non è solo attrazione…\n\nOgni tuo sguardo mi fa sorridere 🥰💓\nSe fossi qui… ti abbraccerei forte 😌💖\nOgni tuo gesto mi fa battere il cuore 💓✨\nVicino a te, il mondo scompare… io e te 😍💖\nMi fai desiderare più di quanto le parole possano dire 💓💖";
 
 let i = 0;
 function typeWriter(){
   if(i < text.length){
     document.getElementById("typedText").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeWriter,35);
+    setTimeout(typeWriter,40);
   } else {
     document.getElementById("afterText").style.opacity="1";
   }
 }
 typeWriter();
+
+// PICCOLI CUORICINI CHE VOLANO
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (Math.random()*20 + 15) + "px";
+  heart.style.animationDuration = (Math.random()*3 + 3) + "s";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(createHeart, 400);
+
 </script>
 
 </body>
