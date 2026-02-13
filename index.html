@@ -1,148 +1,174 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <title>Chi Sono</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solo Tu 😏🔥</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#ff4da6,#1a0010 70%);
+  color:white;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+  transition:2s;
+}
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Poppins',sans-serif;
-      background:radial-gradient(circle at top,#1c2040,#0b0d17);
-      color:#fff;
-      overflow-x:hidden;
-    }
+.container{
+  max-width:900px;
+  padding:3rem;
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(25px);
+  border-radius:35px;
+  animation:fade 2s ease forwards;
+  box-shadow:0 0 50px rgba(255,0,102,0.5);
+}
 
-    section{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:3rem 2rem;
-    }
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  animation:glow 3s infinite alternate;
+}
 
-    .overlay{
-      position:fixed;
-      inset:0;
-      background:radial-gradient(circle at top,rgba(255,255,255,0.08),transparent 60%);
-      pointer-events:none;
-      z-index:0;
-    }
+h2{margin-top:2rem;}
 
-    .content{
-      text-align:center;
-      max-width:900px;
-      animation:fadeUp 1.8s ease forwards;
-    }
+p{
+  margin:1.2rem 0;
+  line-height:1.9;
+  font-size:1.1rem;
+}
 
-    h1,h2{
-      font-family:'Playfair Display',serif;
-      margin-bottom:1.5rem;
-    }
+audio, iframe{
+  width:100%;
+  margin-top:1rem;
+}
 
-    h1{font-size:clamp(2.5rem,5vw,4rem)}
-    h2{font-size:clamp(2rem,4vw,3rem)}
+iframe{
+  height:215px;
+  border:none;
+}
 
-    h1 span{
-      background:linear-gradient(90deg,#ff5fa2,#9b8cff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.bigText{
+  position:fixed;
+  font-size:7vw;
+  font-family:'Playfair Display',serif;
+  opacity:0;
+  transition:2s;
+  pointer-events:none;
+  text-shadow:0 0 60px #ff1f75;
+  animation:heartbeat 1s infinite alternate;
+}
 
-    p{
-      font-size:1.2rem;
-      opacity:.85;
-      max-width:650px;
-      margin:0 auto;
-      line-height:1.8;
-    }
+.heart{
+  position:fixed;
+  color:#ff4da6;
+  animation:fall 5s linear infinite;
+}
 
-    .scroll{
-      margin-top:3rem;
-      font-size:1.5rem;
-      opacity:.6;
-      animation:float 2s infinite;
-      cursor:pointer;
-    }
+@keyframes fade{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
 
-    .enter{
-      margin-top:3rem;
-    }
+@keyframes glow{
+  from{text-shadow:0 0 10px #fff;}
+  to{text-shadow:0 0 60px #ff1f75;}
+}
 
-    .enter a{
-      color:#ffd6e7;
-      text-decoration:none;
-      font-size:1rem;
-      border-bottom:1px solid rgba(255,214,231,.35);
-      padding-bottom:2px;
-      transition:.4s;
-    }
+@keyframes fall{
+  0%{transform:translateY(-10vh);}
+  100%{transform:translateY(110vh);}
+}
 
-    .enter a:hover{
-      border-bottom-color:#ffd6e7;
-      opacity:1;
-    }
+@keyframes heartbeat{
+  0%{transform:scale(1);}
+  25%{transform:scale(1.1);}
+  50%{transform:scale(1);}
+  75%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
 
-    .cta{
-      margin-top:3rem;
-      display:inline-block;
-      padding:1rem 2.5rem;
-      border-radius:30px;
-      background:linear-gradient(90deg,#ff5fa2,#9b8cff);
-      color:#fff;
-      text-decoration:none;
-      font-size:1rem;
-      transition:transform .3s,box-shadow .3s;
-    }
+.zoom{
+  animation:zoomBg 5s ease-in-out infinite alternate;
+}
 
-    .cta:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 30px rgba(0,0,0,.4);
-    }
-
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(40px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    @keyframes beat{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.2)}
-    }
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(10px)}
-    }
-  </style>
+@keyframes zoomBg{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.03);}
+  100%{transform:scale(1);}
+}
+</style>
 </head>
-<body>
+<body class="zoom">
 
-<div class="overlay"></div>
+<div class="container">
 
-<!-- HOME -->
-<section id="home">
-  <div class="content">
-    <h1>Questo spazio racconta <span>chi sono</span></h1>
-    <p>
-      Non è per chiedere amore.  
-      Non è per farti cambiare idea.  
-      È per mostrare ciò che porto con me: profondità, attenzione, e verità.  
-      Qualcosa che qualcuno, una volta, ha deciso di non vedere.
-    </p>
+<h1>Non è solo San Valentino 😏🔥</h1>
 
-    <div class="scroll" onclick="document.getElementById('second').scrollIntoView({behavior:'smooth'})">↓</div>
+<p id="typedText"></p>
 
-    <!-- LINK A PAROLE -->
-    <div class="enter">
-      <a href="parole.html">entra nelle parole</a>
-    </div>
+<h2>1️⃣ Sei Tu</h2>
+<audio controls autoplay src="sei-tu.mp3"></audio>
 
-    <!-- LINK A PER-TE -->
-    <a class="cta" href="per-te.html">scopri di più</a>
-  </div>
-</section>
+<h2>2️⃣ Solo Noi</h2>
+<audio controls autoplay src="solo-noi.mp3"></audio>
+
+<h2>3️⃣ Finalmente Noi</h2>
+<iframe src="https://www.youtube.com/embed/Jvn-Z9o6mJ4?autoplay=1&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</div>
+
+<div id="bigText" class="bigText">AVVICINATI 😏🔥</div>
+<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.6rem; opacity:0; transition:2s;">
+Perché se fossi qui adesso…  
+non mi limiterei a guardarti. 😌
+</div>
+
+<script>
+// TESTO MAGNETICO AUTOMATICO
+const text = "Non è solo attrazione.\n\nÈ quel modo in cui mi fai perdere il filo dei pensieri.\nQuel momento in cui il silenzio tra noi diventa... carico.\n\nÈ il modo in cui mi guardi e sai che sto pensando esattamente la stessa cosa.\n\nA volte immagino di averti davanti.\nVicino.\nTroppo vicino.\n\nLe mani che si cercano senza dire niente.\nIl respiro che cambia.\n\nE quella tensione che non chiede il permesso.\n\nDimmi che non la senti anche tu... 😏💦";
+
+let i = 0;
+function typeWriter(){
+  if(i < text.length){
+    document.getElementById("typedText").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter,45);
+  } else {
+    showFinal();
+  }
+}
+typeWriter();
+
+// MOSTRA SCRITTE FINALI E CUORI
+function showFinal(){
+  document.getElementById("bigText").style.opacity="1";
+  document.getElementById("afterText").style.opacity="1";
+  intenseHearts();
+}
+
+// CUORI CADENTI
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*35+20)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},5000);
+}
+
+function intenseHearts(){
+  setInterval(createHeart,75);
+}
+</script>
 
 </body>
 </html>
