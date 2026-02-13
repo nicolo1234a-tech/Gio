@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solo Tu 😏🔥</title>
+<title>Solo Tu 🥵💦</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -24,25 +24,26 @@ body{
 .container{
   max-width:900px;
   padding:3rem;
-  background:rgba(255,255,255,0.07);
-  backdrop-filter:blur(25px);
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(30px);
   border-radius:35px;
   animation:fade 2s ease forwards;
-  box-shadow:0 0 50px rgba(255,0,102,0.5);
+  box-shadow:0 0 70px rgba(255,0,102,0.7);
 }
 
 h1{
   font-family:'Playfair Display',serif;
   font-size:3rem;
-  animation:glow 3s infinite alternate;
+  animation:glow 2s infinite alternate, pulse 1s infinite;
 }
 
 h2{margin-top:2rem;}
 
 p{
   margin:1.2rem 0;
-  line-height:1.9;
-  font-size:1.1rem;
+  line-height:2;
+  font-size:1.2rem;
+  text-shadow:0 0 10px #ff1f75;
 }
 
 audio, iframe{
@@ -55,21 +56,8 @@ iframe{
   border:none;
 }
 
-.bigText{
-  position:fixed;
-  font-size:7vw;
-  font-family:'Playfair Display',serif;
-  opacity:0;
-  transition:2s;
-  pointer-events:none;
-  text-shadow:0 0 60px #ff1f75;
-  animation:heartbeat 1s infinite alternate;
-}
-
-.heart{
-  position:fixed;
-  color:#ff4da6;
-  animation:fall 5s linear infinite;
+.zoom{
+  animation:zoomBg 5s ease-in-out infinite alternate;
 }
 
 @keyframes fade{
@@ -78,30 +66,20 @@ iframe{
 }
 
 @keyframes glow{
-  from{text-shadow:0 0 10px #fff;}
-  to{text-shadow:0 0 60px #ff1f75;}
+  0%{text-shadow:0 0 10px #fff;}
+  50%{text-shadow:0 0 60px #ff1f75, 0 0 90px #ff66aa;}
+  100%{text-shadow:0 0 30px #ff1f75,0 0 60px #ff3399;}
 }
 
-@keyframes fall{
-  0%{transform:translateY(-10vh);}
-  100%{transform:translateY(110vh);}
-}
-
-@keyframes heartbeat{
+@keyframes pulse{
   0%{transform:scale(1);}
-  25%{transform:scale(1.1);}
-  50%{transform:scale(1);}
-  75%{transform:scale(1.1);}
+  50%{transform:scale(1.05);}
   100%{transform:scale(1);}
-}
-
-.zoom{
-  animation:zoomBg 5s ease-in-out infinite alternate;
 }
 
 @keyframes zoomBg{
   0%{transform:scale(1);}
-  50%{transform:scale(1.03);}
+  50%{transform:scale(1.04);}
   100%{transform:scale(1);}
 }
 </style>
@@ -110,7 +88,7 @@ iframe{
 
 <div class="container">
 
-<h1>Non è solo San Valentino 😏🔥</h1>
+<h1>Non è solo San Valentino 🥵💦</h1>
 
 <p id="typedText"></p>
 
@@ -125,66 +103,26 @@ iframe{
 
 </div>
 
-<div id="bigText" class="bigText">AVVICINATI 😏🔥</div>
-<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.6rem; opacity:0; transition:2s;">
+<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.7rem; opacity:0; transition:2s; text-shadow:0 0 20px #ff66aa;">
 Se fossi qui adesso…  
-non mi limiterei a guardarti. 😌
+non mi limiterei a guardarti 😌🔥💦🥵
 </div>
 
 <script>
-// FRASI FLIRTY E PROVOCANTI
-const text = "Non è solo attrazione.\n\nOgni tuo sguardo mi fa vibrare 😏💓\nSe fossi qui… non mi limiterei a guardarti 😌🔥\nOgni tuo gesto mi fa perdere il respiro 🥵💖\nVicino a te, il mondo scompare… io e te 😏💦\nMi fai desiderare più di quanto le parole possano dire 💓🫦";
+// FRASI FLIRTY E PROVOCANTI 🥵💦
+const text = "Non è solo attrazione…\n\nOgni tuo sguardo mi fa vibrare 🥵💓💦\nSe fossi qui… non mi limiterei a guardarti 😌🔥💦\nOgni tuo gesto mi fa perdere il respiro 🥵💖💦\nVicino a te, il mondo scompare… io e te 😏💦🫦\nMi fai desiderare più di quanto le parole possano dire 💓💦🥵";
 
 let i = 0;
 function typeWriter(){
   if(i < text.length){
     document.getElementById("typedText").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeWriter,45);
+    setTimeout(typeWriter,35);
   } else {
-    showFinal();
+    document.getElementById("afterText").style.opacity="1";
   }
 }
 typeWriter();
-
-// MOSTRA SCRITTE FINALI E CUORI
-function showFinal(){
-  document.getElementById("bigText").style.opacity="1";
-  document.getElementById("afterText").style.opacity="1";
-  startHearts();
-}
-
-// CUORI CADENTI MODULATI
-let heartInterval;
-let intensity = 75; // intervallo iniziale
-let maxIntensity = 25; // massimo (più veloci)
-let increasing = true;
-
-function createHeart(){
-  const heart=document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML="💖";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(Math.random()*35+20)+"px";
-  heart.style.opacity=Math.random()*0.8 + 0.2;
-  document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},5000);
-}
-
-function startHearts(){
-  heartInterval = setInterval(createHeart, intensity);
-  const modulate = setInterval(()=>{
-    if(increasing){
-      intensity -= 2; // aumenta frequenza
-      if(intensity <= maxIntensity) increasing = false;
-    } else {
-      intensity += 1; // diminuisce frequenza
-      if(intensity >= 75) increasing = true;
-    }
-    clearInterval(heartInterval);
-    heartInterval = setInterval(createHeart, Math.max(intensity,10));
-  },500);
-}
 </script>
 
 </body>
