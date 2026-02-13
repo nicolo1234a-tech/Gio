@@ -127,13 +127,13 @@ iframe{
 
 <div id="bigText" class="bigText">AVVICINATI 😏🔥</div>
 <div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.6rem; opacity:0; transition:2s;">
-Perché se fossi qui adesso…  
+Se fossi qui adesso…  
 non mi limiterei a guardarti. 😌
 </div>
 
 <script>
-// TESTO MAGNETICO AUTOMATICO
-const text = "Non è solo attrazione.\n\nÈ quel modo in cui mi fai perdere il filo dei pensieri.\nQuel momento in cui il silenzio tra noi diventa... carico.\n\nÈ il modo in cui mi guardi e sai che sto pensando esattamente la stessa cosa.\n\nA volte immagino di averti davanti.\nVicino.\nTroppo vicino.\n\nLe mani che si cercano senza dire niente.\nIl respiro che cambia.\n\nE quella tensione che non chiede il permesso.\n\nDimmi che non la senti anche tu... 😏💦";
+// FRASI FLIRTY E PROVOCANTI
+const text = "Non è solo attrazione.\n\nOgni tuo sguardo mi fa vibrare 😏💓\nSe fossi qui… non mi limiterei a guardarti 😌🔥\nOgni tuo gesto mi fa perdere il respiro 🥵💖\nVicino a te, il mondo scompare… io e te 😏💦\nMi fai desiderare più di quanto le parole possano dire 💓🫦";
 
 let i = 0;
 function typeWriter(){
@@ -151,22 +151,39 @@ typeWriter();
 function showFinal(){
   document.getElementById("bigText").style.opacity="1";
   document.getElementById("afterText").style.opacity="1";
-  intenseHearts();
+  startHearts();
 }
 
-// CUORI CADENTI
+// CUORI CADENTI MODULATI
+let heartInterval;
+let intensity = 75; // intervallo iniziale
+let maxIntensity = 25; // massimo (più veloci)
+let increasing = true;
+
 function createHeart(){
   const heart=document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML="💖";
   heart.style.left=Math.random()*100+"vw";
   heart.style.fontSize=(Math.random()*35+20)+"px";
+  heart.style.opacity=Math.random()*0.8 + 0.2;
   document.body.appendChild(heart);
   setTimeout(()=>{heart.remove();},5000);
 }
 
-function intenseHearts(){
-  setInterval(createHeart,75);
+function startHearts(){
+  heartInterval = setInterval(createHeart, intensity);
+  const modulate = setInterval(()=>{
+    if(increasing){
+      intensity -= 2; // aumenta frequenza
+      if(intensity <= maxIntensity) increasing = false;
+    } else {
+      intensity += 1; // diminuisce frequenza
+      if(intensity >= 75) increasing = true;
+    }
+    clearInterval(heartInterval);
+    heartInterval = setInterval(createHeart, Math.max(intensity,10));
+  },500);
 }
 </script>
 
