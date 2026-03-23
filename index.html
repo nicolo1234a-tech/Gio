@@ -3,161 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solo Tu 🥰💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<title>Sorpresa per Giorgia ❤️</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:radial-gradient(circle at top,#ffb3c6,#ff66a3 70%);
-  color:white;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-  transition:2s;
-}
-
-.container{
-  max-width:900px;
-  padding:3rem;
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(25px);
-  border-radius:35px;
-  animation:fade 2s ease forwards;
-  box-shadow:0 0 50px rgba(255,102,170,0.6);
-  position:relative;
-  z-index:1;
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+overflow:hidden;
 }
 
 h1{
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  animation:pulse 1.5s infinite;
-  text-shadow:0 0 15px #ff66aa;
+font-size:50px;
 }
 
-h2{margin-top:2rem;}
-
-p{
-  margin:1.2rem 0;
-  line-height:2;
-  font-size:1.2rem;
-  text-shadow:0 0 10px #ff99bb;
+#countdown{
+font-size:40px;
+margin-top:20px;
 }
 
-/* LINK YOUTUBE */
-.yt-link{
-  display:inline-block;
-  margin-top:1rem;
-  padding:15px 35px;
-  background:linear-gradient(45deg,#ff4d88,#ff99bb);
-  color:white;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:1.4rem;
-  box-shadow:0 0 25px #ff66aa;
-  transition:0.3s;
+#site{
+display:none;
+padding:30px;
 }
 
-.yt-link:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 40px #ffffff;
+button{
+padding:15px 25px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+margin-top:20px;
 }
 
-/* ZOOM */
-.zoom{
-  animation:zoomBg 5s ease-in-out infinite alternate;
-}
-
-/* CUORICINI */
 .heart{
-  position:fixed;
-  font-size:20px;
-  opacity:0;
-  animation:heartFloat 4s linear infinite;
+position:absolute;
+font-size:20px;
+animation:fall linear infinite;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
 }
 
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-  100%{transform:scale(1);}
-}
-
-@keyframes zoomBg{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.03);}
-  100%{transform:scale(1);}
-}
-
-@keyframes heartFloat{
-  0%{transform:translateY(0) scale(0.8);opacity:0;}
-  10%{opacity:1;}
-  50%{transform:translateY(-150px) scale(1.2);}
-  100%{transform:translateY(-300px) scale(0.8);opacity:0;}
-}
 </style>
 </head>
-<body class="zoom">
 
-<div class="container">
+<body>
 
-<h1>Non è solo San Valentino 🥰💖</h1>
+<div id="countdownPage">
 
-<p id="typedText"></p>
+<h1>🎁 Una sorpresa per Giorgia</h1>
 
-<h2>1️⃣ Sei Tu</h2>
-<a class="yt-link" href="https://youtu.be/xuQup0wycEg?si=winyIia8lV2Bof6A" target="_blank">▶ Ascolta Sei Tu 💖</a>
+<p>Il regalo si aprirà tra:</p>
 
-<h2>2️⃣ Solo Noi</h2>
-<a class="yt-link" href="https://youtu.be/F6Mg31-tt8M?si=EXEzdV255ngOObis" target="_blank">▶ Ascolta Solo Noi 💖</a>
-
-<h2>3️⃣ Finalmente Noi</h2>
-<a class="yt-link" href="https://youtu.be/Jvn-Z9o6mJ4" target="_blank">▶ Ascolta Finalmente Noi 💕</a>
+<div id="countdown"></div>
 
 </div>
 
-<div id="afterText" style="position:fixed; bottom:15%; width:100%; font-size:1.7rem; opacity:0; transition:2s; text-shadow:0 0 20px #ff99bb;">
-Se fossi qui adesso…  
-ti abbraccerei forte 🥰💓✨
+<div id="site">
+
+<h1>🎂 Buon Compleanno Giorgia 🎂</h1>
+
+<p>
+Oggi è il tuo giorno speciale ❤️
+</p>
+
+<p>
+Sono davvero felice di averti conosciuta.
+Anche se ci siamo incontrati online,
+sei diventata molto importante per me.
+</p>
+
+<p>
+Spero che questo compleanno sia pieno di felicità.
+</p>
+
+<p>
+Con affetto,<br>
+<b>Nicolò ❤️</b>
+</p>
+
 </div>
 
 <script>
-const text = "Non è solo attrazione…\n\nOgni tuo sguardo mi fa sorridere 🥰💓\nSe fossi qui… ti abbraccerei forte 😌💖\nOgni tuo gesto mi fa battere il cuore 💓✨\nVicino a te, il mondo scompare… io e te 😍💖\nMi fai desiderare più di quanto le parole possano dire 💓💖";
 
-let i = 0;
-function typeWriter(){
-  if(i < text.length){
-    document.getElementById("typedText").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter,40);
-  } else {
-    document.getElementById("afterText").style.opacity="1";
-  }
+const birthday = new Date("March 26, 2026 00:00:00").getTime();
+
+const countdown = setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = birthday - now;
+
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "g " + hours + "h "
++ minutes + "m " + seconds + "s";
+
+if(distance < 0){
+
+clearInterval(countdown);
+
+document.getElementById("countdownPage").style.display="none";
+
+document.getElementById("site").style.display="block";
+
+startHearts()
+
 }
-typeWriter();
 
-function createHeart(){
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.fontSize = (Math.random()*20 + 15) + "px";
-  heart.style.animationDuration = (Math.random()*3 + 3) + "s";
-  document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},6000);
+},1000);
+
+function startHearts(){
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+
+},300);
+
 }
 
-setInterval(createHeart, 400);
 </script>
 
 </body>
